@@ -1,7 +1,7 @@
 import requests
 import datetime
 
-root_url = "https://api.binance.com/api/v3/klines"
+root_url = "https://api.binance.com"
 
 
 def get_data(coinSymbol, timeInterval, quantity):

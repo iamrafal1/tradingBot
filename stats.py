@@ -4,21 +4,14 @@ import data
 def main():
 
 
-    data = data.get_data("BTCUSDT", "15m", 21)
+    info = data.get_data("BTCUSDT", "15m", 21)
 
-    print(calculate_ema(20, data))
-    ema20 = calculate_ema(20, data)
-    print(calculate_ema(10, data))
-    ema10 = calculate_ema(10, data)
-    print(calculate_ema(5, data))
-    ema5 = calculate_ema(5, data)
-
-
-
-
-
-
-
+    print(calculate_ema(20, info))
+    ema20 = calculate_ema(20, info)
+    print(calculate_ema(10, info))
+    ema10 = calculate_ema(10, info)
+    print(calculate_ema(5, info))
+    ema5 = calculate_ema(5, info)
 
 
 # multiplicator =  [2 ÷ (number of observations + 1)]
@@ -34,3 +27,6 @@ def calculate_ema(days, mydict, smoothing=2):
     for price in prices[days:]:
         ema.append((price * (smoothing / (1 + days))) + ema[-1] * (1 - (smoothing / (1 + days))))
     return ema
+
+if __name__ == "__main__":
+    main()
